@@ -43,6 +43,21 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- spring-boot-starter-jdbc -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+
+		<!-- Oracle JDBC driver (for Java 11 it's ojdbc10 -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc10</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>C:/Program Files/ojdbc/ojdbc10.jar</systemPath>
+		</dependency>
+
 
 
 		<!-- Spring Security - start -->
