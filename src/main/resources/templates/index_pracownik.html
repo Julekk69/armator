@@ -7,8 +7,8 @@
 </head>
 <body>
 
-<div algin="center">
-    <h1>Pracownik Records</h1>
+<div align="center">
+    <h1>Pracownicy Records</h1>
 
     <!--Table  -->
     <table border="1" cellpadding="10">
@@ -23,10 +23,10 @@
         </thead>
         <!--Table body -->
         <tbody>
-            <tr th:each="Pracownik : ${listPracownik}">
-                <td th:text="${Pracownik.id}">id</td>
-                <td th:text="${Pracownik.imie}">imie</td>
-                <td th:text="${Pracownik.nazwisko}">nazwisko</td>
+            <tr th:each="pracownik : ${listPracownik}">
+                <td th:text="${pracownik.id}">id</td>
+                <td th:text="${pracownik.imie}">imie</td>
+                <td th:text="${pracownik.nazwisko}">nazwisko</td>
             </tr>
         </tbody>
 

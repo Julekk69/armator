@@ -3,11 +3,11 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Pracownik</title>
+    <title>Bandera</title>
 </head>
 <body>
 
-<div algin="center">
+<div align="center">
     <h1>Bandery</h1>
 
     <!--Table  -->
@@ -16,17 +16,17 @@
         <!-- Table header -->
         <thead>
         <tr>
-            <th>ID_bander</th>
+            <th>ID_bandery</th>
             <th>Nazwa_bandery</th>
             <th>Panstwo</th>
         </tr>
         </thead>
         <!--Table body -->
         <tbody>
-        <tr th:each="Bandery : ${listBandery}">
-            <td th:text="${Bandery.id}">ID_bandery</td>
-            <td th:text="${Bandery.nazwa}">Nazwa_bandery</td>
-            <td th:text="${Bandery.panstwo}">Panstwo</td>
+        <tr th:each="Bandera : ${listBandera}">
+            <td th:text="${Bandera.ID_bandery}">ID_bandery</td>
+            <td th:text="${Bandera.Nazwa_bandery}">Nazwa_bandery</td>
+            <td th:text="${Bandera.Panstwo}">Panstwo</td>
         </tr>
         </tbody>
 
