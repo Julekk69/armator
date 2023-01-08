@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>New Bandera</title>
+</head>
+<body>
+
+<div align="center">
+    <!-- Page header -->
+    <h1>Enter New Bandera</h1>
+    <!-- End Line/ new line -->
+    <br/>
+
+    <form action="#" th:action="@{/save}" th:object="${bandera}" method="post">
+        <!-- Table -->
+        <table border = "1" cellpadding="10">
+            <tr>
+                <td>ID_bandery:</td>
+                <td><input type="text" th:field="*{ID_bandery}"></td>
+            </tr>
+            <!--Second row-->
+            <tr>
+                <td> Nazwa_bandery:</td>
+                <td><input type="text" th:field="*{Nazwa_bandery}"></td>
+            </tr>
+            <!--Third row-->
+            <tr>
+                <td>Panstwo:</td>
+                <td><input type="text" th:field="*{Panstwo}"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+
+        </table>
+    </form>
+
+    <!-- Table -->
+    <table border = "1" cellpadding = "10">
+
+    </table>
+
+</div>
+
+
+
+</body>
+</html>

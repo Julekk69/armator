@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -20,7 +22,7 @@ public class BanderyDAO {
 
     /* Import java.util.List */ //(zawiera info z bazy danych)
     public List<Bandera> list(){
-        String sql = "SELECT * FROM BANDERY";
+        String sql = "SELECT * FROM bandery";
 
         List<Bandera> listBandera = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Bandera.class));
 
@@ -29,6 +31,11 @@ public class BanderyDAO {
 
     /* Insert – wstawianie nowego wiersza do bazy */
     public void save(Bandera bandera) {
+        SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
+        insertActor.withTableName("bandery").usingColumns("ID_bandery","Nazwa_bandery","Panstwo");
+
+        BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(bandera);
+        insertActor.execute(param);
     }
 
     /* Read – odczytywanie danych z bazy */

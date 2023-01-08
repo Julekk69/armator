@@ -23,6 +23,7 @@ class PracownicyDAOTest extends Object {
 
         /* Import JdbcTemplate */
         dao = new PracownicyDAO(new JdbcTemplate(dataSource));
+
     }
 
     @Test
