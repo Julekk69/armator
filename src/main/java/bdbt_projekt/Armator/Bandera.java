@@ -9,6 +9,7 @@ public class Bandera {
     }
 
     public Bandera(int ID_bandery, String nazwa_bandery, String panstwo) {
+        super();
         this.ID_bandery = ID_bandery;
         this.Nazwa_bandery = nazwa_bandery;
         this.Panstwo = panstwo;

@@ -14,6 +14,7 @@ public class BanderyDAO {
     private JdbcTemplate jdbcTemplate;
 
     public BanderyDAO(JdbcTemplate jdbcTemplate) {
+        super();
         this.jdbcTemplate = jdbcTemplate;
     }
 
