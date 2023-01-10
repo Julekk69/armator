@@ -32,22 +32,31 @@ class BanderyDAOTest {
 
     @Test
     void save() {
-        Bandera bandera = new Bandera(6,"Tomek","Norwegia");
+        Bandera bandera = new Bandera(42,"Tome","Norgia");
         dao.save(bandera);
     }
 
     @Test
     void get() {
-        fail("NOT YET IMPLEMENTED4");
+        int ID_bandery = 89;
+        Bandera bandera = dao.get(ID_bandery);
+        assertNotNull(bandera);
     }
 
     @Test
     void update() {
-        fail("NOT YET IMPLEMENTED5");
+        Bandera bandera = new Bandera();
+        bandera.setID_bandery(34);
+        bandera.setNazwa_bandery("Monika");
+        bandera.setPanstwo("Francja");
+
+        dao.update(bandera);
     }
 
     @Test
     void delete() {
-        fail("NOT YET IMPLEMENTED6");
+
+        int ID_bandery = 23;
+        dao.delete(ID_bandery);
     }
 }

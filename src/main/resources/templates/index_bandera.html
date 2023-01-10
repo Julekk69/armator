@@ -13,6 +13,9 @@
     <!-- Entry to new page -->
     <a href="/new">Enter new bandera</a>
 
+    <!-- Break line-->
+    <br/><br/>
+
     <!--Table  -->
     <table border="1" cellpadding="10">
 
@@ -30,6 +33,11 @@
             <td th:text="${Bandera.ID_bandery}">ID_bandery</td>
             <td th:text="${Bandera.Nazwa_bandery}">Nazwa_bandery</td>
             <td th:text="${Bandera.Panstwo}">Panstwo</td>
+            <td>
+                <a th:href="@{'/edit/' + ${Bandera.ID_bandery}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/delete/' + ${Bandera.ID_bandery}}">Delete</a>
+            </td>
         </tr>
         </tbody>
 

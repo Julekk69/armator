@@ -1,24 +1,23 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8"/>
-    <title>New Bandera</title>
+    <title>Edit Bandera</title>
 </head>
 <body>
 
 <div align="center">
     <!-- Page header -->
-    <h1>Enter New Bandera</h1>
+    <h1>Edit Bandera</h1>
     <!-- End Line/ new line -->
     <br/>
 
-    <form action="#" th:action="@{/save}" th:object="${bandera}" method="post">
+    <form action="#" th:action="@{/update}" th:object="${bandera}" method="post">
         <!-- Table -->
         <table border = "1" cellpadding="10">
             <tr>
                 <td>ID_bandery:</td>
-                <td><input type="text" th:field="*{ID_bandery}"></td>
+                <td><input type="text" th:field="*{ID_bandery}" readonly="readonly"></td>
             </tr>
             <!--Second row-->
             <tr>
