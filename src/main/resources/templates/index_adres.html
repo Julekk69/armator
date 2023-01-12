@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Adres</title>
+</head>
+<body>
+
+<div align="center">
+    <h1>Adresy</h1>
+
+    <!-- Entry to new page -->
+    <a href="/new">Enter new Adres</a>
+
+    <!-- Break line-->
+    <br/><br/>
+
+    <!--Table  -->
+    <table border="1" cellpadding="10">
+
+        <!-- Table header -->
+        <thead>
+        <tr>
+            <th>ID_adresu</th>
+            <th>Kraj</th>
+            <th>Miasto</th>
+            <th>Kod_pocztowy</th>
+            <th>Ulica</th>
+            <th>Nr_budynku</th>
+            <th>Nr_lokalu</th>
+        </tr>
+        </thead>
+        <!--Table body -->
+        <tbody>
+        <tr th:each="Adres : ${listAdres}">
+            <td th:text="${Adres.ID_adresu}">ID_adresu</td>
+            <td th:text="${Adres.Kraj}">Kraj</td>
+            <td th:text="${Adres.Miasto}">Miasto</td>
+            <td th:text="${Adres.Kod_pocztowy}">Kod_pocztowy</td>
+            <td th:text="${Adres.Ulica}">Ulica</td>
+            <td th:text="${Adres.Nr_budynku}">Nr_budynku</td>
+            <td th:text="${Adres.Nr_lokalu}">Nr_lokalu</td>
+            <td>
+                <a th:href="@{'/edit/' + ${Adres.ID_adresu}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/delete/' + ${Adres.ID_adresu}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+</div>
+</body>
+</html>
+

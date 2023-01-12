@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>New Pracownik</title>
+</head>
+<body>
+
+<div align="center">
+  <!-- Page header -->
+  <h1>Enter New Pracownik</h1>
+  <!-- End Line/ new line -->
+  <br/>
+
+  <form action="#" th:action="@{/save}" th:object="${pracownik}" method="post">
+    <!-- Table -->
+    <table border = "1" cellpadding="10">
+      <tr>
+        <td>ID_pracownika:</td>
+        <td><input type="text" th:field="*{id}"></td>
+      </tr>
+      <!--Second row-->
+      <tr>
+        <td> Imie_pracownika:</td>
+        <td><input type="text" th:field="*{imie}"></td>
+      </tr>
+      <!--Third row-->
+      <tr>
+        <td>Nazwisko_pracownika:</td>
+        <td><input type="text" th:field="*{nazwisko}"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><button type="submit">Save</button> </td>
+      </tr>
+
+    </table>
+  </form>
+
+</div>
+
+
+
+</body>
+</html>
