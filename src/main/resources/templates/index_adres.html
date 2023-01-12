@@ -42,9 +42,9 @@
             <td th:text="${Adres.Nr_budynku}">Nr_budynku</td>
             <td th:text="${Adres.Nr_lokalu}">Nr_lokalu</td>
             <td>
-                <a th:href="@{'/edit/' + ${Adres.ID_adresu}}">Edit</a>
+                <a th:href="@{'/editA/' + ${Adres.ID_adresu}}">Edit</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a th:href="@{'/delete/' + ${Adres.ID_adresu}}">Delete</a>
+                <a th:href="@{'/deleteA/' + ${Adres.ID_adresu}}">Delete</a>
             </td>
         </tr>
         </tbody>

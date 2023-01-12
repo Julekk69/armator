@@ -45,9 +45,19 @@ class AdresyDAOTest {
 
     @Test
     void update() {
+        Adres adres = new Adres();
+        adres.setID_adresu(23);
+        adres.setKod_pocztowy("2323");
+        adres.setKraj("wlochy");
+        adres.setUlica("wegierksa");
+        adres.setNr_budynku("23");
+        adres.setNr_lokalu("3213");
+        adres.setMiasto("ople");
     }
 
     @Test
     void delete() {
+        int ID_adresu = 23;
+        daoa.delete(ID_adresu);
     }
 }

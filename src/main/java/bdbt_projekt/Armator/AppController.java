@@ -28,6 +28,8 @@ public class AppController implements WebMvcConfigurer {
         registry.addViewController("/new_form").setViewName("new_form");
         registry.addViewController("/edit_form").setViewName("edit_form");
         registry.addViewController("/inex_adres").setViewName("index_adres");
+        registry.addViewController("/edit_formadres").setViewName("edit_formadres");
+        registry.addViewController("/new_formadres").setViewName("new_formadres");
 
 
         registry.addViewController("/main_admin").setViewName("admin/main_admin");
@@ -127,21 +129,21 @@ public class AppController implements WebMvcConfigurer {
             return "redirect:/index_adres";
         }
 
-        @RequestMapping("/edit/{ID_adresu}")
+        @RequestMapping("/editA/{ID_adresu}")
         public ModelAndView showeditFormA(@PathVariable(name = "ID_adresu") int ID_adresu) {
-            ModelAndView mav = new ModelAndView("edit_form");
+            ModelAndView mav1 = new ModelAndView("edit_formadres");
             Adres adres = daoa.get(ID_adresu);
-            mav.addObject("adres", adres);
-            return mav;
+            mav1.addObject("adres", adres);
+            return mav1;
         }
 
-        @RequestMapping(value = "/update", method = RequestMethod.POST)
+        @RequestMapping(value = "/updateA", method = RequestMethod.POST)
         public String updateA(@ModelAttribute("adres") Adres adres) {
             daoa.update(adres);
             return "redirect:/index_adres";
         }
 
-        @RequestMapping("/delete/{ID_adresu}")
+        @RequestMapping("/deleteA/{ID_adresu}")
         public String deleteA(@PathVariable(name = "ID_adresu") int ID_adresu) {
             daoa.delete(ID_adresu);
             return "redirect:/index_adres";
