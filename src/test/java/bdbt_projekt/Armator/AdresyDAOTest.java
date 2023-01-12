@@ -32,10 +32,15 @@ class AdresyDAOTest {
 
     @Test
     void save() {
+        Adres adres = new Adres(60,"wer","wqw","sqsq","sqsq","sqsqs","sqs");
+        daoa.save(adres);
     }
 
     @Test
     void get() {
+        int ID_adresu = 4;
+        Adres adres = daoa.get(ID_adresu);
+        assertNotNull(adres);
     }
 
     @Test

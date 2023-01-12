@@ -102,48 +102,50 @@ public class AppController implements WebMvcConfigurer {
             dao.delete(ID_bandery);
             return "redirect:/index_bandera";
         }
+
+
         @Autowired
         private AdresyDAO daoa;
 
         @RequestMapping("/index_adres")
-        public String viewPage(Model model) {
+        public String viewPageA(Model model) {
             /* Import java.util.List */
             List<Adres> listAdres = daoa.list();
             model.addAttribute("listAdres", listAdres);
             return "index_adres";
         }
-//        @RequestMapping("/new")
-//        public String showForm(Model model) {
-//            Adres adres = new Adres();
-//            model.addAttribute("adres", adres);
-//            return "new_formadres";
-//        }
-//
-//        @RequestMapping(value = "/save", method = RequestMethod.POST)
-//        public String save(@ModelAttribute("adres") Adres adres) {
-//            daoa.save(adres);
-//            return "redirect:/index_adres";
-//        }
-//
-//        @RequestMapping("/edit/{ID_adresu}")
-//        public ModelAndView showeditFormA(@PathVariable(name = "ID_adresu") int ID_adresu) {
-//            ModelAndView mav = new ModelAndView("edit_form");
-//            Adres adres = daoa.get(ID_adresu);
-//            mav.addObject("adres", adres);
-//            return mav;
-//        }
-//
-//        @RequestMapping(value = "/update", method = RequestMethod.POST)
-//        public String updateA(@ModelAttribute("adres") Adres adres) {
-//            daoa.update(adres);
-//            return "redirect:/index_adres";
-//        }
-//
-//        @RequestMapping("/delete/{ID_adresu}")
-//        public String deleteA(@PathVariable(name = "ID_adresu") int ID_adresu) {
-//            daoa.delete(ID_adresu);
-//            return "redirect:/index_adres";
-//        }
+        @RequestMapping("/newA")
+        public String showFormA(Model model) {
+            Adres adres = new Adres();
+            model.addAttribute("adres", adres);
+            return "new_formadres";
+        }
+
+        @RequestMapping(value = "/saveA", method = RequestMethod.POST)
+        public String saveA(@ModelAttribute("adres") Adres adres) {
+            daoa.save(adres);
+            return "redirect:/index_adres";
+        }
+
+        @RequestMapping("/edit/{ID_adresu}")
+        public ModelAndView showeditFormA(@PathVariable(name = "ID_adresu") int ID_adresu) {
+            ModelAndView mav = new ModelAndView("edit_form");
+            Adres adres = daoa.get(ID_adresu);
+            mav.addObject("adres", adres);
+            return mav;
+        }
+
+        @RequestMapping(value = "/update", method = RequestMethod.POST)
+        public String updateA(@ModelAttribute("adres") Adres adres) {
+            daoa.update(adres);
+            return "redirect:/index_adres";
+        }
+
+        @RequestMapping("/delete/{ID_adresu}")
+        public String deleteA(@PathVariable(name = "ID_adresu") int ID_adresu) {
+            daoa.delete(ID_adresu);
+            return "redirect:/index_adres";
+        }
 
     }
 }
