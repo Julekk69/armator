@@ -57,7 +57,7 @@ class AdresyDAOTest {
 
     @Test
     void delete() {
-        int ID_adresu = 23;
+        int ID_adresu = 13;
         daoa.delete(ID_adresu);
     }
 }

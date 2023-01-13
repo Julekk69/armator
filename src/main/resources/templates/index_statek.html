@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Statek</title>
+</head>
+<body>
+
+<div align="center">
+    <h1>Statki</h1>
+
+    <!-- Entry to new page -->
+    <a href="/newS">Enter new Statek</a>
+
+    <!-- Break line-->
+    <br/><br/>
+
+    <!--Table  -->
+    <table border="1" cellpadding="10">
+
+        <!-- Table header -->
+        <thead>
+        <tr>
+            <th>ID_statku</th>
+            <th>Nazwa</th>
+            <th>Dlugosc</th>
+            <th>Nosnosc</th>
+            <th>Predkosc_eksploatacyjna</th>
+            <th>Min_licz_zalogi</th>
+            <th>Data_wodowania</th>
+            <th>ID_armatora</th>
+            <th>ID_bandery</th>
+        </tr>
+        </thead>
+        <!--Table body -->
+        <tbody>
+        <tr th:each="Statek : ${listStatek}">
+            <td th:text="${Statek.ID_statku}">ID_statku</td>
+            <td th:text="${Statek.Nazwa}">Nazwa</td>
+            <td th:text="${Statek.Dlugosc}">Dlugosc</td>
+            <td th:text="${Statek.Nosnosc}">Nosnosc</td>
+            <td th:text="${Statek.Predkosc_eksploatacyjna}">Predkosc_eksploatacyjna</td>
+            <td th:text="${Statek.Min_licz_zalogi}">Min_licz_zalogi</td>
+            <td th:text="${Statek.Data_wodowania}">Data_wodowania</td>
+            <td th:text="${Statek.ID_armatora}">ID_armatora</td>
+            <td th:text="${Statek.ID_bandery}">ID_bandery</td>
+            <td>
+                <a th:href="@{'/editS/' + ${Statek.ID_statku}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/deleteS/' + ${Statek.ID_statku}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+</div>
+</body>
+</html>
+

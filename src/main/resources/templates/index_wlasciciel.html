@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Wlasciciel</title>
+</head>
+<body>
+
+<div align="center">
+    <h1>Wlasciciele</h1>
+
+    <!-- Entry to new page -->
+    <a href="/newWW">Enter new Wlasciciel</a>
+
+    <!-- Break line-->
+    <br/><br/>
+
+    <!--Table  -->
+    <table border="1" cellpadding="10">
+
+        <!-- Table header -->
+        <thead>
+        <tr>
+            <th>ID_wlasciciela</th>
+            <th>Imie</th>
+            <th>Nazwisko</th>
+            <th>Nazwa_firmy</th>
+        </tr>
+        </thead>
+        <!--Table body -->
+        <tbody>
+        <tr th:each="Wlasciciel : ${listWlasciciel}">
+            <td th:text="${Wlasciciel.ID_wlasciciela}">ID_wlasciciela</td>
+            <td th:text="${Wlasciciel.Imie}">Imie</td>
+            <td th:text="${Wlasciciel.Nazwisko}">Nazwisko</td>
+            <td th:text="${Wlasciciel.Nazwa_firmy}">Nazwa_firmy</td>
+            <td>
+                <a th:href="@{'/editW/' + ${Wlasciciel.ID_wlasciciela}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/deleteW/' + ${Wlasciciel.ID_wlasciciela}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+</div>
+</body>
+</html>
+

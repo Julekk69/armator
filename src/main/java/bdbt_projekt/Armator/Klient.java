@@ -1,45 +1,44 @@
 package bdbt_projekt.Armator;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Pracownik {
-    private int ID_pracownika;
+public class Klient {
+    private int ID_klienta;
     private String Imie;
     private String Nazwisko;
-    private String Nr_Konta;
     private String Data_urodzenia;
     private String Plec;
+    private String Nazwa_firmy;
     private String Pesel;
     private String Email;
     private String Nr_telefonu;
-    private int ID_adresu;
-    private int ID_stanowiska;
     private int ID_armatora;
+    private int ID_adresu;
 
-    public Pracownik(){}
+    public Klient(){}
 
-    public Pracownik(int ID_pracownika, String imie, String nazwisko, String nr_Konta, String data_urodzenia, String plec, String pesel, String email, String nr_telefonu, int ID_adresu, int ID_stanowiska, int ID_armatora) {
+    public Klient(int ID_klienta, String imie, String nazwisko, String data_urodzenia, String plec, String nazwa_firmy, String pesel, String email, String nr_telefonu, int ID_armatora, int ID_adresu) {
         super();
-        this.ID_pracownika = ID_pracownika;
+        this.ID_klienta = ID_klienta;
         this.Imie = imie;
         this.Nazwisko = nazwisko;
-        this.Nr_Konta = nr_Konta;
         this.Data_urodzenia = data_urodzenia;
         this.Plec = plec;
+        this.Nazwa_firmy = nazwa_firmy;
         this.Pesel = pesel;
         this.Email = email;
         this.Nr_telefonu = nr_telefonu;
-        this.ID_adresu = ID_adresu;
-        this.ID_stanowiska = ID_stanowiska;
         this.ID_armatora = ID_armatora;
+        this.ID_adresu = ID_adresu;
     }
 
-    public int getID_pracownika() {
-        return ID_pracownika;
-    }
 
-    public void setID_pracownika(int ID_pracownika) {
-        this.ID_pracownika = ID_pracownika;
+    public int getID_klienta() {
+        return ID_klienta;}
+
+    public void setID_klienta(int ID_klienta) {
+        this.ID_klienta = ID_klienta;
     }
 
     public String getImie() {
@@ -58,14 +57,6 @@ public class Pracownik {
         Nazwisko = nazwisko;
     }
 
-    public String getNr_Konta() {
-        return Nr_Konta;
-    }
-
-    public void setNr_Konta(String nr_Konta) {
-        Nr_Konta = nr_Konta;
-    }
-
     public String getData_urodzenia() {
         return Data_urodzenia;
     }
@@ -80,6 +71,14 @@ public class Pracownik {
 
     public void setPlec(String plec) {
         Plec = plec;
+    }
+
+    public String getNazwa_firmy() {
+        return Nazwa_firmy;
+    }
+
+    public void setNazwa_firmy(String nazwa_firmy) {
+        Nazwa_firmy = nazwa_firmy;
     }
 
     public String getPesel() {
@@ -106,22 +105,6 @@ public class Pracownik {
         Nr_telefonu = nr_telefonu;
     }
 
-    public int getID_adresu() {
-        return ID_adresu;
-    }
-
-    public void setID_adresu(int ID_adresu) {
-        this.ID_adresu = ID_adresu;
-    }
-
-    public int getID_stanowiska() {
-        return ID_stanowiska;
-    }
-
-    public void setID_stanowiska(int ID_stanowiska) {
-        this.ID_stanowiska = ID_stanowiska;
-    }
-
     public int getID_armatora() {
         return ID_armatora;
     }
@@ -130,21 +113,28 @@ public class Pracownik {
         this.ID_armatora = ID_armatora;
     }
 
+    public int getID_adresu() {
+        return ID_adresu;
+    }
+
+    public void setID_adresu(int ID_adresu) {
+        this.ID_adresu = ID_adresu;
+    }
+
     @Override
     public String toString() {
-        return "Pracownik{" +
-                "ID_pracownika=" + ID_pracownika +
+        return "Klient{" +
+                "ID_klienta=" + ID_klienta +
                 ", Imie='" + Imie + '\'' +
                 ", Nazwisko='" + Nazwisko + '\'' +
-                ", Nr_Konta='" + Nr_Konta + '\'' +
                 ", Data_urodzenia=" + Data_urodzenia +
                 ", Plec='" + Plec + '\'' +
+                ", Nazwa_firmy='" + Nazwa_firmy + '\'' +
                 ", Pesel='" + Pesel + '\'' +
                 ", Email='" + Email + '\'' +
                 ", Nr_telefonu='" + Nr_telefonu + '\'' +
-                ", ID_adresu=" + ID_adresu +
-                ", ID_stanowiska=" + ID_stanowiska +
-                ", ID_armatora=" + ID_armatora +
+                ", ID_armatora='" + ID_armatora + '\'' +
+                ", ID_adresu='" + ID_adresu + '\'' +
                 '}';
     }
 }

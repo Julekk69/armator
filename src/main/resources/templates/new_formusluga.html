@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>New Usluga</title>
+</head>
+<body>
+
+<div align="center">
+    <!-- Page header -->
+    <h1>Enter New Usluga</h1>
+    <!-- End Line/ new line -->
+    <br/>
+
+    <form action="#" th:action="@{/saveU}" th:object="${usluga}" method="post">
+        <!-- Table -->
+        <table border = "1" cellpadding="10">
+            <tr>
+                <td>ID_uslugi:</td>
+                <td><input type="text" th:field="*{ID_uslugi}"></td>
+            </tr>
+            <!--Second row-->
+            <tr>
+                <td> Rodzaj_uslugi:</td>
+                <td><input type="text" th:field="*{Rodzaj_uslugi}"></td>
+            </tr>
+            <!--Third row-->
+            <tr>
+                <td>Koszt:</td>
+                <td><input type="text" th:field="*{Koszt}"></td>
+            </tr>
+            <tr>
+                <td> Opis:</td>
+                <td><input type="text" th:field="*{Opis}"></td>
+            </tr>
+            <tr>
+                <td> Data_rozpoczecia:</td>
+                <td><input type="text" th:field="*{Data_rozpoczecia}"></td>
+            </tr>
+            <tr>
+                <td> Data_zakonczenia:</td>
+                <td><input type="text" th:field="*{Data_zakonczenia}"></td>
+            </tr>
+            <tr>
+                <td> ID_klienta:</td>
+                <td><input type="text" th:field="*{ID_klienta}"></td>
+            </tr>
+            <tr>
+                <td> ID_statku:</td>
+                <td><input type="text" th:field="*{ID_statku}"></td>
+            </tr>
+            <tr>
+                <td> ID_portu_rozpoczecia:</td>
+                <td><input type="text" th:field="*{ID_portu_rozpoczecia}"></td>
+            </tr>
+            <tr>
+                <td> ID_portu_zakonczenia:</td>
+                <td><input type="text" th:field="*{ID_portu_zakonczenia}"></td>
+            </tr>
+            <tr>
+                <td> ID_armatora:</td>
+                <td><input type="text" th:field="*{ID_armatora}"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+
+        </table>
+    </form>
+
+</div>
+
+
+
+</body>
+</html>

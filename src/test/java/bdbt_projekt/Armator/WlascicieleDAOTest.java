@@ -4,15 +4,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PracownicyDAOTest {
+class WlascicieleDAOTest {
+    private WlascicieleDAO daow;
 
-    private PracownicyDAO daop;
     @BeforeEach
     void setUp() throws Exception{
         DriverManagerDataSource datasource = new DriverManagerDataSource();
@@ -21,30 +20,43 @@ class PracownicyDAOTest {
         datasource.setPassword("BDBTGRB11");
         datasource.setDriverClassName("oracle.jdbc.OracleDriver");
         /* Import JdbcTemplate */
-        daop = new PracownicyDAO(new JdbcTemplate(datasource));
+        daow = new WlascicieleDAO(new JdbcTemplate(datasource));
     }
 
     @Test
     void list() {
-        List<Pracownik> listPracownik = daop.list();
+        List<Wlasciciel> listWlasciciel = daow.list();
 
-        assertFalse(listPracownik.isEmpty());
+        assertFalse(listWlasciciel.isEmpty());
     }
 
     @Test
     void save() {
-        
+        Wlasciciel wlasciciel = new Wlasciciel(3,"Mariusz","Wiktorwicz","BMW");
+        daow.save(wlasciciel);
     }
 
     @Test
     void get() {
+        int ID_wlasciciela = 1;
+        Wlasciciel wlasciciel = daow.get(ID_wlasciciela);
+        assertNotNull(wlasciciel);
     }
 
     @Test
     void update() {
+        Wlasciciel wlasciciel = new Wlasciciel();
+        wlasciciel.setID_wlasciciela(3);
+        wlasciciel.setImie("Bogdan");
+        wlasciciel.setNazwisko("Witko");
+        wlasciciel.setNazwa_firmy("Mercedes");
+
+        daow.update(wlasciciel);
     }
 
     @Test
     void delete() {
+        int ID_wlasciciela = 3;
+        daow.delete(ID_wlasciciela);
     }
 }

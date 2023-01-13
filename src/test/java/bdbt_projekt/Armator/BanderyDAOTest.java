@@ -32,7 +32,7 @@ class BanderyDAOTest {
 
     @Test
     void save() {
-        Bandera bandera = new Bandera(42,"Tome","Norgia");
+        Bandera bandera = new Bandera(42,"plo","Norgia");
         dao.save(bandera);
     }
 

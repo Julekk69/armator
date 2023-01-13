@@ -4,15 +4,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PracownicyDAOTest {
+class StatkiDAOTest {
 
-    private PracownicyDAO daop;
+    private StatkiDAO daos;
     @BeforeEach
     void setUp() throws Exception{
         DriverManagerDataSource datasource = new DriverManagerDataSource();
@@ -21,23 +20,26 @@ class PracownicyDAOTest {
         datasource.setPassword("BDBTGRB11");
         datasource.setDriverClassName("oracle.jdbc.OracleDriver");
         /* Import JdbcTemplate */
-        daop = new PracownicyDAO(new JdbcTemplate(datasource));
+        daos = new StatkiDAO(new JdbcTemplate(datasource));
     }
 
     @Test
     void list() {
-        List<Pracownik> listPracownik = daop.list();
+        List<Statek> listStatek = daos.list();
 
-        assertFalse(listPracownik.isEmpty());
+        assertFalse(listStatek.isEmpty());
     }
 
     @Test
     void save() {
-        
     }
 
     @Test
     void get() {
+    }
+
+    @Test
+    void get2() {
     }
 
     @Test
