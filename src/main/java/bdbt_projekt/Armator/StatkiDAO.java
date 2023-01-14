@@ -59,7 +59,7 @@ public class StatkiDAO {
     public void update(Statek statek) {
         String sql = "UPDATE STATKI SET Nazwa=:Nazwa,Dlugosc=:Dlugosc," +
                 "Nosnosc=:Nosnosc,Predkosc_eksploatacyjna=:Predkosc_eksploatacyjna," +
-                "Min_licz_zalogi=:Min_licz_zalogi,Data_wodowania=:Data_wodowania WHERE ID_statku=:ID_statku,ID_armatora=:ID_armatora,ID_bandery=:ID_bandery";
+                "Min_licz_zalogi=:Min_licz_zalogi,Data_wodowania=:Data_wodowania,ID_armatora=:ID_armatora,ID_bandery=:ID_bandery WHERE ID_statku=:ID_statku";
         BeanPropertySqlParameterSource param3 = new BeanPropertySqlParameterSource(statek);
         NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(jdbcTemplate);
 

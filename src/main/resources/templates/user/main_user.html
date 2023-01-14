@@ -5,14 +5,50 @@
     <title>Main User Page</title>
 
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        * {
+    box-sizing: border-box;
+    }
 
+    .column {
+    float: left;
+    width: 42.33%;
+    padding: 5px;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+
+    </style>
+    <style>
+.button {
+  background-color: 	#FFBF00; /* Blue */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button3 {padding: 15px 60px;}
+</style>
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="/">BDBT Spring Boot Project - Part II</a>
+        <a class="navbar-brand" href="/">OFFICIAL WEBSITE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -22,37 +58,42 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/index}">Home</a>
+                    <a class="nav-link" th:href="@{/home}">Home</a>
                 </li>
-
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Main
-                        <span class="sr-only">(current)</span>
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/main}">Main</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b
                             style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
                 </li>
-
             </ul>
         </div>
     </div>
 </nav>
 
-<div class="container">
+<div class="container"  >
     <div class="row">
 
         <div class="col-md-10 mt-5">
-            <form method="post" th:action="@{/index}">
+            <form method="post" th:action="@{/home}">
                 <div class="form-group">
                     <label style="font-size:30px" th:inline="text">Welcome <a
                             style="color:lightskyblue; text-transform:capitalize"><b>[[${#httpServletRequest.remoteUser}]]</b></a>
                         to the main page!</label>
-                    <div style="font-size:20px">If you want to logout, click "Logout" button under this text.</div>
-                </div>
 
+                    <div class="row" align="center">
+                        <div class="column" align="center">
+                            <img src="https://free4kwallpapers.com/uploads/originals/2020/03/30/lake-boats-wallpaper.jpg" alt="Snow" style="width:100%">
+                            <p></p><button class="button button1" type="submit" formaction="/index_statek">Statki</button></p>
+                        </div>
+                        <div class="column" align="center">
+                            <img src="https://wallpaperaccess.com/full/2674238.jpg" alt="Forest" style="width:100%">
+                            <p></p><button class="button button1" type="submit" formaction="/index_usluga">Uslugi</button></p>
+                        </div>
+                    </div>
+                    <br><br><br>
+                </div >
                 <button class="btn btn-primary" type="submit" onclick="successfullyLogout()" value="Sign Out">Logout
                 </button>
             </form>

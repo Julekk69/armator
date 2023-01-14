@@ -22,6 +22,7 @@ public class AppController implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("home");
         registry.addViewController("/home").setViewName("home");
+        registry.addViewController("/home/home").setViewName("home");
         registry.addViewController("/main").setViewName("home");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/index_pracownik").setViewName("index_pracownik");
@@ -86,7 +87,7 @@ public class AppController implements WebMvcConfigurer {
         @Autowired
         private BanderyDAO dao;
 
-        @RequestMapping("/index_bandera")
+        @RequestMapping("main_admin/index_bandera")
         public String viewHomePage(Model model) {
             /* Import java.util.List */
             List<Bandera> listBandera = dao.list();

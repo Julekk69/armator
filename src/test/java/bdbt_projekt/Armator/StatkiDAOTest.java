@@ -32,18 +32,28 @@ class StatkiDAOTest {
 
     @Test
     void save() {
+        Statek statek = new Statek(4,"Szybki",100,33333,230,10,"",4,6);
+        daos.update(statek);
     }
 
     @Test
     void get() {
-    }
-
-    @Test
-    void get2() {
+        int ID_statku = 1;
+        Statek statek = daos.get(ID_statku);
+        assertNotNull(statek);
     }
 
     @Test
     void update() {
+        Statek statek = new Statek();
+        statek.setID_statku(3);
+        statek.setData_wodowania("");
+        statek.setDlugosc(212);
+        statek.setID_armatora(1);
+        statek.setNazwa("swsw");
+        statek.setNosnosc(12);
+        statek.setMin_licz_zalogi(1212);
+        statek.setMin_licz_zalogi(12);
     }
 
     @Test
