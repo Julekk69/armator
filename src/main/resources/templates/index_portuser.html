@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Port</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">BDBT Spring Boot Project - Part II</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/home}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/main}">Main</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b
+                            style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
+                </li>
+
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div align="center">
+    <h1>Porty</h1>
+    <br/><br/>
+
+    <!--Table  -->
+    <table border="1" cellpadding="10">
+
+        <!-- Table header -->
+        <thead>
+        <tr>
+            <th>ID_portu</th>
+            <th>Rodzaj_uslugi</th>
+            <th>Czy_rozladunek</th>
+            <th>Glebokosc</th>
+            <th>Szer_kanalu</th>
+            <th>Nr_telefonu</th>
+        </tr>
+        </thead>
+        <!--Table body -->
+        <tbody>
+        <tr th:each="Port : ${listPort}">
+            <td th:text="${Port.ID_portu}">ID_portu</td>
+            <td th:text="${Port.Rodzaj_portu}">Rodzaj_portu</td>
+            <td th:text="${Port.Czy_rozladunek}">Czy_rozladunek</td>
+            <td th:text="${Port.Glebokosc}">Glebokosc</td>
+            <td th:text="${Port.Szer_kanalu}">Szer_kanalu</td>
+            <td th:text="${Port.Nr_telefonu}">Nr_telefonu</td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+</div>
+</body>
+</html>
+

@@ -29,6 +29,7 @@ public class AppController implements WebMvcConfigurer {
         registry.addViewController("/new_form").setViewName("new_form");
         registry.addViewController("/edit_form").setViewName("edit_form");
         registry.addViewController("/index_adres").setViewName("index_adres");
+        registry.addViewController("/index_portuser").setViewName("index_portuser");
         registry.addViewController("/index_usluga").setViewName("index_usluga");
         registry.addViewController("/edit_formadres").setViewName("edit_formadres");
         registry.addViewController("/new_formadres").setViewName("new_formadres");
@@ -493,6 +494,16 @@ public class AppController implements WebMvcConfigurer {
             List<Usluga> listUsluga = daouu.list();
             model.addAttribute("listUsluga", listUsluga);
             return "index_uslugauser";}
+        @Autowired
+        private PortyDAO daoppp;
+
+        @RequestMapping("/index_portuser")
+        public String viewPageppp(Model model) {
+            /* Import java.util.List */
+            List<Port> listPort = daoppp.list();
+            model.addAttribute("listPort", listPort);
+            return "index_portuser";
+        }
 
 
 
