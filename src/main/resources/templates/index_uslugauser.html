@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Usluga</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">OFFICIAL WEBSITE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/home}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/main}">Main</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b
+                            style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div align="center">
+    <h1>Uslugi</h1>
+
+    <!-- Entry to new page -->
+    <a href="/newU">Enter new Usluga</a>
+
+    <!-- Break line-->
+    <br/><br/>
+
+    <!--Table  -->
+    <table border="1" cellpadding="10">
+
+        <!-- Table header -->
+        <thead>
+        <tr>
+            <th>ID_uslugi</th>
+            <th>Rodzaj_uslugi</th>
+            <th>Koszt</th>
+            <th>Opis</th>
+            <th>Data_rozpoczecia</th>
+            <th>Data_zakonczenia</th>
+        </tr>
+        </thead>
+        <!--Table body -->
+        <tbody>
+        <tr th:each="Usluga : ${listUsluga}">
+            <td th:text="${Usluga.ID_uslugi}">ID_uslugi</td>
+            <td th:text="${Usluga.Rodzaj_uslugi}">Rodzaj_uslugi</td>
+            <td th:text="${Usluga.Koszt}">Koszt</td>
+            <td th:text="${Usluga.Opis}">Opis</td>
+            <td th:text="${Usluga.Data_rozpoczecia}">Data_rozpoczecia</td>
+            <td th:text="${Usluga.Data_zakonczenia}">Data_zakonczenia</td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+</div>
+</body>
+</html>
+

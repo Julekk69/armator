@@ -37,6 +37,7 @@ public class AppController implements WebMvcConfigurer {
         registry.addViewController("/index_armator").setViewName("index_armator");
         registry.addViewController("/index_port").setViewName("index_port");
         registry.addViewController("/index_statek").setViewName("index_statek");
+        registry.addViewController("/index_uslugauser").setViewName("index_uslugauser");
         registry.addViewController("/index_statekuser").setViewName("index_statekuser");
         registry.addViewController("/new_formwlasciciel").setViewName("new_formwlasciciel");
         registry.addViewController("/new_formklient").setViewName("new_formklient");
@@ -483,9 +484,19 @@ public class AppController implements WebMvcConfigurer {
             List<Statek> listStatek = daoss.list();
             model.addAttribute("listStatek", listStatek);
             return "index_statekuser";}
+        @Autowired
+        private UslugiDAO daouu;
 
-    }
-}
+        @RequestMapping("/index_uslugauser")
+        public String viewPageUU(Model model) {
+            /* Import java.util.List */
+            List<Usluga> listUsluga = daouu.list();
+            model.addAttribute("listUsluga", listUsluga);
+            return "index_uslugauser";}
+
+
+
+}}
 
 
 
