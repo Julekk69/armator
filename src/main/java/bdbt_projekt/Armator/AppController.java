@@ -22,7 +22,6 @@ public class AppController implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("home");
         registry.addViewController("/home").setViewName("home");
-        registry.addViewController("/home/home").setViewName("home");
         registry.addViewController("/main").setViewName("home");
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/index_pracownik").setViewName("index_pracownik");
@@ -38,6 +37,7 @@ public class AppController implements WebMvcConfigurer {
         registry.addViewController("/index_armator").setViewName("index_armator");
         registry.addViewController("/index_port").setViewName("index_port");
         registry.addViewController("/index_statek").setViewName("index_statek");
+        registry.addViewController("/index_statekuser").setViewName("index_statekuser");
         registry.addViewController("/new_formwlasciciel").setViewName("new_formwlasciciel");
         registry.addViewController("/new_formklient").setViewName("new_formklient");
         registry.addViewController("/new_formusluga").setViewName("new_formusluga");
@@ -87,7 +87,7 @@ public class AppController implements WebMvcConfigurer {
         @Autowired
         private BanderyDAO dao;
 
-        @RequestMapping("main_admin/index_bandera")
+        @RequestMapping("/index_bandera")
         public String viewHomePage(Model model) {
             /* Import java.util.List */
             List<Bandera> listBandera = dao.list();
@@ -474,6 +474,15 @@ public class AppController implements WebMvcConfigurer {
             daoaa.delete(ID_armatora);
             return "redirect:/index_armatora";
         }
+        @Autowired
+        private StatkiDAO daoss;
+
+        @RequestMapping("/index_statekuser")
+        public String viewPageSS(Model model) {
+            /* Import java.util.List */
+            List<Statek> listStatek = daoss.list();
+            model.addAttribute("listStatek", listStatek);
+            return "index_statekuser";}
 
     }
 }

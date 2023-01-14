@@ -5,7 +5,6 @@
     <meta charset="UTF-8"/>
     <title>Statek</title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
-
 </head>
 <body>
 <!-- Navigation -->
@@ -38,10 +37,6 @@
 <div align="center">
     <h1>Statki</h1>
 
-    <!-- Entry to new page -->
-    <a href="/newS">Enter new Statek</a>
-
-    <!-- Break line-->
     <br/><br/>
 
     <!--Table  -->
@@ -57,8 +52,6 @@
             <th>Predkosc_eksploatacyjna</th>
             <th>Min_licz_zalogi</th>
             <th>Data_wodowania</th>
-            <th>ID_armatora</th>
-            <th>ID_bandery</th>
         </tr>
         </thead>
         <!--Table body -->
@@ -71,13 +64,6 @@
             <td th:text="${Statek.Predkosc_eksploatacyjna}">Predkosc_eksploatacyjna</td>
             <td th:text="${Statek.Min_licz_zalogi}">Min_licz_zalogi</td>
             <td th:text="${Statek.Data_wodowania}">Data_wodowania</td>
-            <td th:text="${Statek.ID_armatora}">ID_armatora</td>
-            <td th:text="${Statek.ID_bandery}">ID_bandery</td>
-            <td>
-                <a th:href="@{'/editS/' + ${Statek.ID_statku}}">Edit</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <a th:href="@{'/deleteS/' + ${Statek.ID_statku}}">Delete</a>
-            </td>
         </tr>
         </tbody>
 
